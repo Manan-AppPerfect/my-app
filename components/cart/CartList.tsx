@@ -1,18 +1,14 @@
 import { CartItem as CartItemType } from "@/types"
 import CartItem from "./CartItem";
 
-type CartListProps = {
+type Props = {
     cart: CartItemType[];
     removeFromCart: (id: number) => void;
 };
 
-export default function CartList({ cart, removeFromCart }: CartListProps) {
+export default function CartList({ cart, removeFromCart }: Props) {
     return (
         <div className="mt-6">
-            <h2 className="text-xl font-bold mb-4">
-                Your Cart
-            </h2>
-
             {cart.length === 0 ? (
                 <p>Cart is empty</p>
             ) : (
