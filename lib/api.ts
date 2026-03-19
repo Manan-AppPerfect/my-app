@@ -1,9 +1,16 @@
-export async function fetchProducts() {
-    const res = await fetch("https://fakestoreapi.com/products");
+import { Product } from "@/types";
+
+type ProductsResponse = {
+  products: Product[];
+};
+
+export async function fetchProducts(): Promise<Product[]> {
+    const res = await fetch("https://dummyjson.com/products");
 
     if(!res.ok) {
         throw new Error("failed to fetch")
     }
 
-    return res.json();
+    const data: ProductsResponse = await res.json();
+    return data.products;
 }

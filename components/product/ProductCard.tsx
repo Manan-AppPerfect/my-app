@@ -1,6 +1,7 @@
 "use client";
 
 import { Product } from "@/types";
+import Link from "next/link";
 
 type Props = {
     product: Product;
@@ -10,7 +11,8 @@ type Props = {
 export default function ProductCard({product, onAddToCart} : Props) {
     return (
         <div className="p-4 border rounded">
-            <h2 className="text-xl">{product.title}</h2>
+
+            <Link href={`/product/${product.id}`}><h2 className="text-xl">{product.title}</h2></Link>
             <p className="text-green-600 font-semibold">₹{product.price}</p>            
             <button 
                 onClick={() => onAddToCart(product)}
