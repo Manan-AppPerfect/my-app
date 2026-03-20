@@ -5,8 +5,14 @@ type ProductsResponse = {
 };
 
 export async function fetchProducts(): Promise<Product[]> {
-    const res = await fetch("https://dummyjson.com/products");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products`, {
+        next: { revalidate: 30 },
+    });
 
+    console.log("ENV:", process.env.NEXT_PUBLIC_API_BASE_URL);
+
+    console.log("Fetching products...");
+    
     if(!res.ok) {
         throw new Error("failed to fetch")
     }
