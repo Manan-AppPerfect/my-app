@@ -3,6 +3,7 @@
 import { useCartContext } from "@/context/Cart/CartContext";
 import { Product } from "@/types"
 import ProductCard from "./ProductCard";
+import SearchBar from "../search/SearchBar";
 
 type Props = {
     products: Product[];
@@ -14,6 +15,7 @@ export default function ProductList({ products }: Props ) {
 
     return (
         <>
+            <SearchBar />
             <div className="space-y-5 mt-6">
                 {products.map((product) => (
                     <ProductCard
