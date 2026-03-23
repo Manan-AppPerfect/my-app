@@ -9,10 +9,6 @@ export async function fetchProducts(): Promise<Product[]> {
         next: { revalidate: 30 },
     });
 
-    console.log("ENV:", process.env.NEXT_PUBLIC_API_BASE_URL);
-
-    console.log("Fetching products...");
-    
     if(!res.ok) {
         throw new Error("failed to fetch")
     }
