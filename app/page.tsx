@@ -7,7 +7,7 @@ export default async function Home() {
 
   return (
     <main className="p-10">
-      <h1 className=" text-center text-yellow-200 text-3xl font-bold mb-6">Products</h1>
+      <h1 className=" text-center text-yellow-300 text-3xl font-bold mb-6">Products</h1>
 
       <ProductList products={products} />
     </main>

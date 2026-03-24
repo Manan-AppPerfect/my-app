@@ -16,3 +16,11 @@ export async function fetchProducts(): Promise<Product[]> {
     const data: ProductsResponse = await res.json();
     return data.products;
 }
+
+export async function fetchProductById(id: string) {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/product/${id}`
+  );
+
+  return await res.json();
+}

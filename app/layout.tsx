@@ -30,9 +30,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 text-gray-900`}
       >
           <CartProvider>
-            <div className="container">
+            <div className="max-w-auto mx-auto">
               <Navbar />
-              <hr className="my-4 border-gray-300" />
               <main className="mt-6">
                 {children}
               </main>

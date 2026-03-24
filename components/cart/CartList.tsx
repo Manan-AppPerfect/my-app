@@ -8,7 +8,7 @@ type Props = {
 
 export default function CartList({ cart, removeFromCart }: Props) {
     return (
-        <div className="mt-6">
+        <div className="grid grid-cols-4 gap-6 mt-4">
             {cart.length === 0 ? (
                 <p>Cart is empty</p>
             ) : (

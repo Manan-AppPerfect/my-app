@@ -16,7 +16,7 @@ export default function ProductList({ products }: Props ) {
     return (
         <>
             <SearchBar />
-            <div className="space-y-5 mt-6">
+            <div className="grid grid-cols-4 gap-6">
                 {products.map((product) => (
                     <ProductCard
                         key={product.id}
