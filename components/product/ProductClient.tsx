@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setProducts } from "@/store/productSlice";
+import { setProducts } from "@/store/slices/productSlice";
 import ProductList from "./ProductList";
 import { Product } from "@/types";
 
