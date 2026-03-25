@@ -1,18 +1,14 @@
 "use client";
 
-import { useCartContext } from "@/context/Cart/CartContext";
-import { Product } from "@/types"
 import ProductCard from "./ProductCard";
 import SearchBar from "../search/SearchBar";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
-type Props = {
-    products: Product[];
-}
+export default function ProductList() {
 
-export default function ProductList({ products }: Props ) {
+    const products = useSelector((state: RootState) => state.product.products);
     
-    const { addToCart } = useCartContext();
-
     return (
         <>
             <SearchBar />
@@ -21,7 +17,6 @@ export default function ProductList({ products }: Props ) {
                     <ProductCard
                         key={product.id}
                         product={product}
-                        onAddToCart={addToCart}
                     />
                 ))}
             </div>

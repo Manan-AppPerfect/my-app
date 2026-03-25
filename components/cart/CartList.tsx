@@ -1,22 +1,21 @@
-import { CartItem as CartItemType } from "@/types"
+"use client";
+
+import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
+import { RootState } from "@/store/store";
 
-type Props = {
-    cart: CartItemType[];
-    removeFromCart: (id: number) => void;
-};
+export default function CartList() {
 
-export default function CartList({ cart, removeFromCart }: Props) {
+    const cartItems = useSelector((state: RootState) => state.cart.items)
     return (
         <div className="grid grid-cols-4 gap-6 mt-4">
-            {cart.length === 0 ? (
-                <p>Cart is empty</p>
+            {cartItems.length === 0 ? (
+                <p className="col-span-4 text-center text-gray-500">Cart is empty</p>
             ) : (
-                cart.map((item) => (
+                cartItems.map((item) => (
                     <CartItem 
                         key={item.product.id}
                         item={item}
-                        onRemove={removeFromCart}
                     />
                 ))
             )}

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from "@/components/navbar/Navbar";
-import { CartProvider } from "@/context/Cart/CartContext";
+import { Provider } from "react-redux";
+import { store } from "@/store/store";
+import ReduxProvider from "@/store/ReduxProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,14 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 text-gray-900`}
       >
-          <CartProvider>
+          <ReduxProvider>
             <div className="max-w-auto mx-auto">
               <Navbar />
               <main className="mt-6">
                 {children}
               </main>
             </div>
-          </CartProvider>
+          </ReduxProvider>
       </body>
     </html>
   );

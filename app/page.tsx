@@ -1,4 +1,4 @@
-import ProductList from "@/components/product/ProductList";
+import ProductClient from "@/components/product/ProductClient";
 import { fetchProducts } from "@/lib/api";
 
 export default async function Home() {
@@ -9,7 +9,7 @@ export default async function Home() {
     <main className="p-10">
       <h1 className=" text-center text-yellow-300 text-3xl font-bold mb-6">Products</h1>
 
-      <ProductList products={products} />
+      <ProductClient products={products}/>
     </main>
   );
 }
