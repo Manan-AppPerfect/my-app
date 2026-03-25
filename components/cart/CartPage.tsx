@@ -10,15 +10,13 @@ export default function CartPage(){
 
     return (
         <main className="p-10">
-            <h1 className="text-3xl font-bold text-yellow-400 mb-6">Your Cart</h1>
+            <h1 className="text-3xl font-bold text-center text-yellow-400 mb-6">Your Cart</h1>
 
             <CartList />
 
             {cartItems.length > 0 && (
                 <p className="text-lg font-bold mt-5">Total: ₹{totalPrice}</p>
             )}
-
-            {cartItems.length === 0 && <p>Your cart is empty.</p>}
         </main>
     );
 }

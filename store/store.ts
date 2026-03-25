@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cartReducer from "./cartSlice";
+import cartReducer from "./slices/cartSlice";
 import productReducer from "./productSlice";
+import authReducer from "./slices/authSlice";
+import searchReducer from "./slices/searchSlice";
 
 const loadCart = () => {
   if (typeof window === "undefined") {
@@ -35,6 +37,8 @@ export const store = configureStore({
     reducer:{
         cart: cartReducer,
         product: productReducer,
+        auth: authReducer,
+        search: searchReducer,
     },
     preloadedState: {
         cart: loadCart(),

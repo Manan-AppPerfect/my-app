@@ -1,6 +1,6 @@
 "use client"; 
 
-import { removeFromCart } from "@/store/cartSlice";
+import { removeFromCart } from "@/store/slices/cartSlice";
 import { CartItem as CartItemType } from "@/types";
 import Link from "next/link";
 import { useDispatch } from "react-redux";

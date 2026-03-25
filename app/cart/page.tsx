@@ -1,5 +1,10 @@
+import AuthGuard from "@/components/auth/AuthGuard";
 import CartPage from "@/components/cart/CartPage";
 
 export default function CartItemsPage(){
-    return <CartPage />;
+    return (
+        <AuthGuard>
+            <CartPage />
+        </AuthGuard>
+    );
 }

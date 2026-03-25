@@ -6,9 +6,13 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 
 export default function ProductList() {
-
     const products = useSelector((state: RootState) => state.product.products);
+    const query = useSelector((state: RootState) => state.search.query);
     
+    const filteredProducts = products.filter((product) =>
+        product.title.toLowerCase().includes(query.toLowerCase())
+    );
+
     return (
         <>
             <SearchBar />
