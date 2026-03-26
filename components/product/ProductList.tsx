@@ -17,7 +17,7 @@ export default function ProductList() {
         <>
             <SearchBar />
             <div className="grid grid-cols-4 gap-6">
-                {products.map((product) => (
+                {filteredProducts.map((product) => (
                     <ProductCard
                         key={product.id}
                         product={product}

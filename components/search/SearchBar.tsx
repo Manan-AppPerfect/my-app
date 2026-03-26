@@ -12,15 +12,17 @@ export default function SearchBar() {
         inputRef.current?.focus();
     }, []);
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(setQuery(e.target.value));
+    }
+
     return (
         <input 
             ref={inputRef}
             type="text"
             placeholder="Search your product..."
             className="border p-2 w-full mb-4"
-            onChange={(e) => {
-                console.log("typing:", e.target.value);
-                dispatch(setQuery(e.target.value));}}
+            onChange={handleChange}
         />
     );
 }
