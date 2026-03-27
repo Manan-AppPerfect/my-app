@@ -3,6 +3,7 @@ import cartReducer from "./slices/cartSlice";
 import productReducer from "./slices/productSlice";
 import authReducer from "./slices/authSlice";
 import searchReducer from "./slices/searchSlice";
+import featureFlagReducer from "./slices/featureFlagSlice";
 
 const loadCart = () => {
   if (typeof window === "undefined") {
@@ -39,6 +40,7 @@ export const store = configureStore({
         product: productReducer,
         auth: authReducer,
         search: searchReducer,
+        featureFlags: featureFlagReducer,
     },
     preloadedState: {
         cart: loadCart(),
