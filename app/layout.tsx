@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./styles/globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
